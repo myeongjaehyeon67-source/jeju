@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cafe-site",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\audwo\\Desktop\\더큰\\코드\\카페\\.claude\\serve-static.ps1"
+      ],
+      "port": 5500
+    }
+  ]
+}
