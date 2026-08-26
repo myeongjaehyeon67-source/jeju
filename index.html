@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>귤등대 GYULDEUNGDAE | 제주 탑동 카페</title>
+<meta name="description" content="제주더큰내일센터 1층, 탑동 바닷가의 작은 등대 같은 카페 '귤등대'. 제주 감귤과 바다를 담은 시그니처 메뉴를 만나보세요.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <span>🍊 탑동사거리 도보 3분 · 제주더큰내일센터 1층</span>
+</div>
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a href="#top" class="logo">
+      <span class="logo__mark">🏮</span>
+      <span class="logo__text">귤등대<em>GYULDEUNGDAE</em></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about">소개</a>
+      <a href="#menu">메뉴</a>
+      <a href="#vision">이야기</a>
+      <a href="#location">오시는길</a>
+      <a href="#visit">안내</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__waves" aria-hidden="true">
+      <svg viewBox="0 0 1440 220" preserveAspectRatio="none"><path d="M0,120 C240,200 480,40 720,100 C960,160 1200,60 1440,120 L1440,220 L0,220 Z"></path></svg>
+    </div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">JEJU TAPDONG · SINCE 2026</p>
+      <h1 class="hero__title">파도가 잠시<br>쉬어가는 감귤빛 등대</h1>
+      <p class="hero__desc">제주 탑동 바다 앞, 제주더큰내일센터 1층에서<br class="only-desktop"> 감귤과 바다를 닮은 한 잔을 건넵니다.</p>
+      <div class="hero__cta">
+        <a href="#menu" class="btn btn--primary">메뉴 구경하기</a>
+        <a href="#location" class="btn btn--ghost">오시는 길</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="아래로 스크롤">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <p class="section-eyebrow">ABOUT</p>
+      <h2 class="section-title">탑동 바다와 청춘의 시작점,<br>그 사이에 놓인 카페</h2>
+      <p class="section-desc">
+        귤등대는 제주 원도심 <strong>탑동 방파제</strong> 바로 앞,<br class="only-desktop">
+        청년들의 새로운 도전을 응원하는 <strong>제주더큰내일센터 1층</strong>에 자리했습니다.<br>
+        바다를 향해 난 통창 자리에 앉아 감귤빛 등대 같은 카페에서, 잠시 파도 소리에 쉬어가세요.
+      </p>
+
+      <div class="about__grid">
+        <div class="about__card">
+          <span class="about__icon">🌊</span>
+          <h3>오션뷰 통창</h3>
+          <p>탑동 방파제와 등대가 한눈에 들어오는 창가 좌석</p>
+        </div>
+        <div class="about__card">
+          <span class="about__icon">🧑‍💻</span>
+          <h3>워크 &amp; 스터디존</h3>
+          <p>화상면접·자소서 작업을 위한 콘센트 완비 좌석</p>
+        </div>
+        <div class="about__card">
+          <span class="about__icon">🐾</span>
+          <h3>반려동반 가능</h3>
+          <p>반려동물과 함께하는 전용 좌석을 별도 운영</p>
+        </div>
+        <div class="about__card">
+          <span class="about__icon">🍊</span>
+          <h3>로컬 감귤 직거래</h3>
+          <p>제주 농가에서 직접 받은 제철 감귤로 매달 다른 메뉴</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="section-inner">
+      <p class="section-eyebrow">MENU</p>
+      <h2 class="section-title">낯설고도 반가운,<br>귤등대의 시그니처</h2>
+      <p class="section-desc">제주에서만 만날 수 있는 이름과 재료로 채운 메뉴입니다.</p>
+
+      <div class="menu__tabs" id="menuTabs">
+        <button class="menu__tab is-active" data-cat="signature">시그니처</button>
+        <button class="menu__tab" data-cat="tea">티</button>
+        <button class="menu__tab" data-cat="dessert">빙수 &amp; 디저트</button>
+        <button class="menu__tab" data-cat="bakery">베이커리</button>
+      </div>
+
+      <div class="menu__grid" id="menuGrid">
+
+        <article class="menu__card" data-cat="signature">
+          <span class="menu__tag">SIGNATURE</span>
+          <h3>귤빛파도 <span>Gyulbit Pado</span></h3>
+          <p>제주 감귤청과 유기농 말차가 파도처럼 층을 이루는 티. 젓지 않고 서서히 섞어 마시는 재미.</p>
+          <span class="menu__price">6,500원</span>
+        </article>
+
+        <article class="menu__card" data-cat="signature">
+          <span class="menu__tag">SIGNATURE</span>
+          <h3>해녀의 숨비소리 <span>Sumbisori Ade</span></h3>
+          <p>감귤 스파클링 에이드에 톡톡 튀는 팝핑을 더해, 해녀가 물 밖으로 나와 내쉬는 숨소리를 표현했어요.</p>
+          <span class="menu__price">6,000원</span>
+        </article>
+
+        <article class="menu__card" data-cat="signature">
+          <span class="menu__tag">SIGNATURE</span>
+          <h3>현무암 라떼 <span>Hyeonmuam Latte</span></h3>
+          <p>대나무숯을 더한 진한 에스프레소 위에 감귤 크림. 현무암 돌처럼 구멍 송송, 맛은 부드럽게.</p>
+          <span class="menu__price">6,500원</span>
+        </article>
+
+        <article class="menu__card" data-cat="signature">
+          <span class="menu__tag">SIGNATURE</span>
+          <h3>오름 라떼 <span>Oreum Latte</span></h3>
+          <p>말차와 에스프레소가 그러데이션으로 쌓여 제주 오름의 능선을 닮은 라떼.</p>
+          <span class="menu__price">6,000원</span>
+        </article>
+
+        <article class="menu__card" data-cat="signature">
+          <span class="menu__tag">SIGNATURE</span>
+          <h3>돌하르방 라떼 <span>Dol Hareubang Latte</span></h3>
+          <p>고소한 우유 라떼 위에 귀여운 돌하르방 쿠키 토퍼를 올렸어요.</p>
+          <span class="menu__price">6,000원</span>
+        </article>
+
+        <article class="menu__card" data-cat="tea" style="display:none">
+          <span class="menu__tag">TEA</span>
+          <h3>귤말차티 <span>Gyul Matcha Tea</span></h3>
+          <p>제주 감귤청과 유기농 말차만으로 우려낸 담백하고 향긋한 티.</p>
+          <span class="menu__price">5,500원</span>
+        </article>
+
+        <article class="menu__card" data-cat="tea" style="display:none">
+          <span class="menu__tag">TEA</span>
+          <h3>유채꽃차 <span>Canola Blossom Tea</span></h3>
+          <p>봄날 제주 들판을 물들이는 유채꽃 향을 담은 플라워 허브티.</p>
+          <span class="menu__price">5,500원</span>
+        </article>
+
+        <article class="menu__card" data-cat="tea" style="display:none">
+          <span class="menu__tag">TEA</span>
+          <h3>바람길 홍차 <span>Windpath Black Tea</span></h3>
+          <p>제주 바람을 닮은 시나몬 향을 더한 진한 홍차.</p>
+          <span class="menu__price">5,500원</span>
+        </article>
+
+        <article class="menu__card" data-cat="dessert" style="display:none">
+          <span class="menu__tag">DESSERT</span>
+          <h3>한라산 눈꽃빙수 <span>Hallasan Snow Bingsu</span></h3>
+          <p>눈처럼 곱게 간 얼음 위에 한라봉 과육을 듬뿍. 둘이 나눠 먹기 좋아요.</p>
+          <span class="menu__price">12,000원</span>
+        </article>
+
+        <article class="menu__card" data-cat="dessert" style="display:none">
+          <span class="menu__tag">DESSERT</span>
+          <h3>우도땅콩빙수 <span>Udo Peanut Bingsu</span></h3>
+          <p>우도 땅콩 크림을 얹은 고소한 빙수.</p>
+          <span class="menu__price">11,000원</span>
+        </article>
+
+        <article class="menu__card" data-cat="dessert" style="display:none">
+          <span class="menu__tag">DESSERT</span>
+          <h3>탑동노을 타르트 <span>Topdong Sunset Tart</span></h3>
+          <p>망고와 자몽이 층을 이뤄 탑동 바다의 노을빛을 담은 타르트.</p>
+          <span class="menu__price">7,000원</span>
+        </article>
+
+        <article class="menu__card" data-cat="bakery" style="display:none">
+          <span class="menu__tag">BAKERY</span>
+          <h3>감귤 스콘 <span>Gamgyul Scone</span></h3>
+          <p>제주 감귤 과육을 듬뿍 넣어 구운 폭신한 스콘.</p>
+          <span class="menu__price">4,500원</span>
+        </article>
+
+        <article class="menu__card" data-cat="bakery" style="display:none">
+          <span class="menu__tag">BAKERY</span>
+          <h3>돌담 쿠키 <span>Doldam Cookie</span></h3>
+          <p>흑임자로 제주 돌담의 질감을 표현한 바삭한 쿠키.</p>
+          <span class="menu__price">4,000원</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION / STORY -->
+  <section class="vision" id="vision">
+    <div class="section-inner">
+      <p class="section-eyebrow">OUR VISION</p>
+      <h2 class="section-title">귤등대가 특별해지는 방법</h2>
+      <p class="section-desc">단순히 커피를 파는 곳이 아니라, 탑동과 청년의 이야기가 모이는 공간을 상상합니다.</p>
+
+      <div class="vision__grid">
+        <div class="vision__card">
+          <span class="vision__num">01</span>
+          <h3>청년의 새 출발과 함께</h3>
+          <p>제주더큰내일센터 프로그램 수료증을 보여주면 음료 할인, 채용설명회·스터디 모임에는 공간을 무료 대관해 구직·창업을 준비하는 청년들을 응원합니다.</p>
+        </div>
+        <div class="vision__card">
+          <span class="vision__num">02</span>
+          <h3>매달 바뀌는 감귤 큐레이션</h3>
+          <p>한라봉·천혜향·레드향·카라향 등 제철 감귤을 제주 농가와 직거래하고, 생산자 이름을 메뉴판에 표기해 로컬의 얼굴을 보여줍니다.</p>
+        </div>
+        <div class="vision__card">
+          <span class="vision__num">03</span>
+          <h3>등대 뷰포인트 좌석</h3>
+          <p>탑동 방파제 등대가 정면으로 보이는 창가 자리를 만들고, 해 질 무렵엔 등대 조명에 맞춰 실내 조명을 낮추는 '노을 타임'을 운영합니다.</p>
+        </div>
+        <div class="vision__card">
+          <span class="vision__num">04</span>
+          <h3>탑동 버스킹 콜라보</h3>
+          <p>탑동광장 주말 버스킹 공연과 연계해 야외 좌석을 무대 앞 관람석처럼 꾸미고, 공연팀에는 음료를 후원합니다.</p>
+        </div>
+        <div class="vision__card">
+          <span class="vision__num">05</span>
+          <h3>해녀 이야기 전시벽</h3>
+          <p>인근 해녀 어머니들의 인터뷰와 사진을 담은 전시 공간을 두어, 여행객에게는 낯선 제주를, 지역민에게는 자긍심을 전합니다.</p>
+        </div>
+        <div class="vision__card">
+          <span class="vision__num">06</span>
+          <h3>제로웨이스트 리필 스테이션</h3>
+          <p>텀블러 지참 시 할인하고, 감귤 껍질로 만든 천연 비누·디퓨저 등 부산물 굿즈를 판매해 버려지는 것 없는 카페를 지향합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION / MAP -->
+  <section class="location" id="location">
+    <div class="section-inner">
+      <p class="section-eyebrow">LOCATION</p>
+      <h2 class="section-title">제주국제공항에서 오시는 길</h2>
+      <p class="section-desc">공항에서 차로 약 15분, 탑동 바다를 따라 오시면 됩니다.</p>
+
+      <div class="location__layout">
+        <div class="location__map-wrap">
+          <div id="map"></div>
+        </div>
+        <div class="location__info">
+          <div class="info-block">
+            <h3>📍 주소</h3>
+            <p id="addressText">제주특별자치도 제주시 관덕로11길 34<br>제주더큰내일센터 1층 (건입동)</p>
+            <button class="btn btn--small" id="copyAddress">주소 복사하기</button>
+          </div>
+          <div class="info-block">
+            <h3>🚗 자가용</h3>
+            <p>제주국제공항 → 용문로터리 → 탑동사거리 → 제주더큰내일센터<br>약 15분 소요</p>
+          </div>
+          <div class="info-block">
+            <h3>🚌 대중교통</h3>
+            <p>공항 리무진/급행버스로 시내 이동 후, 탑동입구·관덕정·동문로터리 정류장 하차 도보 5~10분<br>(411, 412, 415, 431번 외 다수 경유)</p>
+          </div>
+          <div class="info-block">
+            <h3>⛴ 제주항 국제여객터미널</h3>
+            <p>터미널 → 산지천(용진교) → 제주더큰내일센터, 도보 약 10분</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT INFO -->
+  <section class="visit" id="visit">
+    <div class="section-inner">
+      <p class="section-eyebrow">VISIT US</p>
+      <h2 class="section-title">귤등대 안내</h2>
+
+      <div class="visit__grid">
+        <div class="visit__card">
+          <h3>영업시간</h3>
+          <p>매일 09:00 - 21:00<br>Last Order 20:30<br>연중무휴 (명절 별도 공지)</p>
+        </div>
+        <div class="visit__card">
+          <h3>위치</h3>
+          <p>제주더큰내일센터 1층<br>(제주시 관덕로11길 34, 탑동 방파제 도보 3분)</p>
+        </div>
+        <div class="visit__card">
+          <h3>문의</h3>
+          <p>Instagram @gyuldeungdae_jeju<br>Tel. 0507-0000-0000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer__inner">
+    <div>
+      <span class="logo__text footer__logo">귤등대 <em>GYULDEUNGDAE</em></span>
+      <p>제주특별자치도 제주시 관덕로11길 34, 제주더큰내일센터 1층</p>
+    </div>
+    <p class="footer__copy">© 2026 GYULDEUNGDAE. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="js/main.js"></script>
+</body>
+</html>
